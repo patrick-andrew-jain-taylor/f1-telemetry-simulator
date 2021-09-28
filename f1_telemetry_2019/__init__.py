@@ -15,6 +15,7 @@ from f1_telemetry_2019.PacketHeader import PacketHeader
 from f1_telemetry_2019.car_setups_packet.CarSetupDataV1 import CarSetupDataV1
 from f1_telemetry_2019.car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
 from f1_telemetry_2019.car_status_packet.CarStatusDataV1 import CarStatusDataV1
+from f1_telemetry_2019.car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
 from f1_telemetry_2019.car_telemetry_packet.CarTelemetryDataV1 import CarTelemetryDataV1
 from f1_telemetry_2019.car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
 from f1_telemetry_2019.event_packet.PacketEventDataV1 import PacketEventDataV1
@@ -26,21 +27,6 @@ from f1_telemetry_2019.participants_packet.PacketParticipantsDataV1 import Packe
 from f1_telemetry_2019.participants_packet.ParticipantDataV1 import ParticipantDataV1
 from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
 from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
-
-
-class PacketCarStatusDataV1(PackedLittleEndianStructure):
-    """This packet details car statuses for all the cars in the race.
-
-    It includes values such as the damage readings on the car.
-
-    Frequency: Rate as specified in menus
-    Size: 1143 bytes
-    Version: 1
-    """
-    _fields_ = [
-        ('header', PacketHeader),  # Header
-        ('carStatusData', CarStatusDataV1 * 20)
-    ]
 
 
 ###################################################################
