@@ -12,34 +12,13 @@ import ctypes
 import enum
 from f1_telemetry_2021.PackedLittleEndianStructure import PackedLittleEndianStructure
 from f1_telemetry_2021.PacketHeader import PacketHeader
+from f1_telemetry_2021.event_packet.PacketEventDataV1 import PacketEventDataV1
 from f1_telemetry_2021.lap_data_packet.LapDataV1 import LapDataV1
 from f1_telemetry_2021.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
 from f1_telemetry_2021.motion_packet.CarMotionDataV1 import CarMotionDataV1
 from f1_telemetry_2021.motion_packet.PacketMotionDataV1 import PacketMotionDataV1
 from f1_telemetry_2021.session_packet.MarshalZoneV1 import MarshalZoneV1
 from f1_telemetry_2021.session_packet.PacketSessionDataV1 import PacketSessionDataV1
-
-
-########################################################
-#                                                      #
-#  __________  Packet ID 3 : EVENT PACKET  __________  #
-#                                                      #
-########################################################
-
-class PacketEventDataV1(PackedLittleEndianStructure):
-    """This packet gives details of events that happen during the course of a session.
-
-    Frequency: When the event occurs
-    Size: 32 bytes
-    Version: 1
-    """
-    _fields_ = [
-        ('header', PacketHeader),  # Header
-        ('eventStringCode', ctypes.c_char * 4),  # Event string code, see below
-        # Event details - should be interpreted differently for each type
-        ('vehicleIdx', ctypes.c_uint8),  # Vehicle index of car (valid for events: FTLP, RTMT, TMPT, RCWN)
-        ('lapTime', ctypes.c_float)  # Lap time is in seconds (valid for events: FTLP)
-    ]
 
 
 @enum.unique
