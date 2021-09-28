@@ -13,6 +13,7 @@ import enum
 from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStructure
 from f1_telemetry_2019.PacketHeader import PacketHeader
 from f1_telemetry_2019.car_setups_packet.CarSetupDataV1 import CarSetupDataV1
+from f1_telemetry_2019.car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
 from f1_telemetry_2019.event_packet.PacketEventDataV1 import PacketEventDataV1
 from f1_telemetry_2019.lap_data_packet.LapDataV1 import LapDataV1
 from f1_telemetry_2019.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
@@ -22,22 +23,6 @@ from f1_telemetry_2019.participants_packet.PacketParticipantsDataV1 import Packe
 from f1_telemetry_2019.participants_packet.ParticipantDataV1 import ParticipantDataV1
 from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
 from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
-
-
-class PacketCarSetupDataV1(PackedLittleEndianStructure):
-    """This packet details the car setups for each vehicle in the session.
-
-    Note that in multiplayer games, other player cars will appear as blank, you will only be able to see your car
-    setup and AI cars.
-
-    Frequency: 2 per second
-    Size: 843 bytes
-    Version: 1
-    """
-    _fields_ = [
-        ('header', PacketHeader),  # Header
-        ('carSetups', CarSetupDataV1 * 20)
-    ]
 
 
 ################################################################
