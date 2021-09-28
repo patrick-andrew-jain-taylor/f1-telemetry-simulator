@@ -1,16 +1,11 @@
-"""F1 2019 UDP Telemetry support package
+"""
+
+F1 2021 UDP Telemetry support package
 
 This package is based on the CodeMasters Forum post documenting the F1 2019 packet format:
 
-    https://forums.codemasters.com/topic/38920-f1-2019-udp-specification/
+    https://forums.codemasters.com/topic/80231-f1-2021-udp-specification/
 
-Compared to the definitions given there, the Python version has the following changes:
-
-(1) In the 'PacketMotionData' structure, the comments for the three m_angularAcceleration{X,Y,Z} fields erroneously
-    refer to 'velocity' rather than 'acceleration'. This was corrected.
-(2) In the 'CarSetupData' structure, the comment of the m_rearAntiRollBar refer to rear instead of front. This was corrected.
-(3) In the Driver IDs table, driver 34 has name "Wilheim Kaufmann".
-    This is a typo; whenever this driver is encountered in the game, his name is given as "Wilhelm Kaufmann".
 """
 
 import ctypes
