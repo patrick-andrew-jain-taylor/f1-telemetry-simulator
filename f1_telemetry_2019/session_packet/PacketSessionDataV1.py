@@ -1,6 +1,6 @@
 import ctypes
 
-from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, MarshalZoneV1
 
 
 class PacketSessionDataV1(PackedLittleEndianStructure):
@@ -37,5 +37,3 @@ class PacketSessionDataV1(PackedLittleEndianStructure):
         # 2 = virtual safety car
         ('networkGame', ctypes.c_uint8)  # 0 = offline, 1 = online
     ]
-
-

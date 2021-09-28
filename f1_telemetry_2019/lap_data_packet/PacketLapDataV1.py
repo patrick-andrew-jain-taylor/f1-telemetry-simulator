@@ -1,4 +1,4 @@
-from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader, LapDataV1
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, LapDataV1
 
 
 class PacketLapDataV1(PackedLittleEndianStructure):

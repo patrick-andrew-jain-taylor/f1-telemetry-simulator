@@ -10,15 +10,15 @@ This package is based on the CodeMasters Forum post documenting the F1 2019 pack
 
 import ctypes
 import enum
-from f1_telemetry_2021.PackedLittleEndianStructure import PackedLittleEndianStructure
-from f1_telemetry_2021.PacketHeader import PacketHeader
-from f1_telemetry_2021.event_packet.PacketEventDataV1 import PacketEventDataV1
-from f1_telemetry_2021.lap_data_packet.LapDataV1 import LapDataV1
-from f1_telemetry_2021.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
-from f1_telemetry_2021.motion_packet.CarMotionDataV1 import CarMotionDataV1
-from f1_telemetry_2021.motion_packet.PacketMotionDataV1 import PacketMotionDataV1
-from f1_telemetry_2021.session_packet.MarshalZoneV1 import MarshalZoneV1
-from f1_telemetry_2021.session_packet.PacketSessionDataV1 import PacketSessionDataV1
+from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStructure
+from f1_telemetry_2019.PacketHeader import PacketHeader
+from f1_telemetry_2019.event_packet.PacketEventDataV1 import PacketEventDataV1
+from f1_telemetry_2019.lap_data_packet.LapDataV1 import LapDataV1
+from f1_telemetry_2019.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
+from f1_telemetry_2019.motion_packet.CarMotionDataV1 import CarMotionDataV1
+from f1_telemetry_2019.motion_packet.PacketMotionDataV1 import PacketMotionDataV1
+from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
+from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
 
 
 ###############################################################

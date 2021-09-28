@@ -1,6 +1,6 @@
 import ctypes
 
-from f1_telemetry_2021.PackedLittleEndianStructure import PackedLittleEndianStructure
+from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStructure
 
 
 class PacketHeader(PackedLittleEndianStructure):
