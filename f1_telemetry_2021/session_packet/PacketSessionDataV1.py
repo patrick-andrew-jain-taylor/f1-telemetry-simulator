@@ -1,8 +1,8 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from MarshalZoneV1 import MarshalZoneV1
-from WeatherForecastSampleV1 import WeatherForecastSampleV1
+from f1_telemetry_2021.session_packet.MarshalZoneV1 import MarshalZoneV1
+from f1_telemetry_2021.session_packet.WeatherForecastSampleV1 import WeatherForecastSampleV1
 
 
 class PacketSessionDataV1(PackedLittleEndianStructure):

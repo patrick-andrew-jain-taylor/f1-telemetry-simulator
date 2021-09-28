@@ -1,5 +1,5 @@
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from CarDamageDataV1 import CarDamageDataV1
+from f1_telemetry_2021.car_damage_packet.CarDamageDataV1 import CarDamageDataV1
 
 
 class PacketCarDamageDataV1(PackedLittleEndianStructure):

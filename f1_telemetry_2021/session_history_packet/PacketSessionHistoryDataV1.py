@@ -1,7 +1,8 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from LapHistoryDataV1 import LapHistoryDataV1
+from f1_telemetry_2021.session_history_packet.LapHistoryDataV1 import LapHistoryDataV1
+from f1_telemetry_2021.session_history_packet.TyreStintHistoryDataV1 import TyreStintHistoryDataV1
 
 
 class PacketSessionHistoryDataV1(PackedLittleEndianStructure):

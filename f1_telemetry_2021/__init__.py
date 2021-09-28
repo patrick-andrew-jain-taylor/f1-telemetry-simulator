@@ -11,20 +11,20 @@ This package is based on the CodeMasters Forum post documenting the F1 2019 pack
 import ctypes
 import enum
 
-from PackedLittleEndianStructure import PackedLittleEndianStructure
-from PacketHeader import PacketHeader
-from car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
-from car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
-from car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
-from event_packet.PacketEventDataV1 import PacketEventDataV1
-from car_damage_packet.PacketCarDamageDataV1 import PacketCarDamageDataV1
-from final_classification_packet.PacketFinalClassificationDataV1 import PacketFinalClassificationDataV1
-from lobby_info_packet.PacketLobbyInfoDataV1 import PacketLobbyInfoDataV1
-from lap_data_packet.PacketLapDataV1 import PacketLapDataV1
-from motion_packet.PacketMotionDataV1 import PacketMotionDataV1
-from participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
-from session_history_packet.PacketSessionHistoryDataV1 import PacketSessionHistoryDataV1
-from session_packet.PacketSessionDataV1 import PacketSessionDataV1
+from f1_telemetry_2021.PackedLittleEndianStructure import PackedLittleEndianStructure
+from f1_telemetry_2021.PacketHeader import PacketHeader
+from f1_telemetry_2021.car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
+from f1_telemetry_2021.car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
+from f1_telemetry_2021.car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
+from f1_telemetry_2021.event_packet.PacketEventDataV1 import PacketEventDataV1
+from f1_telemetry_2021.car_damage_packet.PacketCarDamageDataV1 import PacketCarDamageDataV1
+from f1_telemetry_2021.final_classification_packet.PacketFinalClassificationDataV1 import PacketFinalClassificationDataV1
+from f1_telemetry_2021.lobby_info_packet.PacketLobbyInfoDataV1 import PacketLobbyInfoDataV1
+from f1_telemetry_2021.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
+from f1_telemetry_2021.motion_packet.PacketMotionDataV1 import PacketMotionDataV1
+from f1_telemetry_2021.participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
+from f1_telemetry_2021.session_history_packet.PacketSessionHistoryDataV1 import PacketSessionHistoryDataV1
+from f1_telemetry_2021.session_packet.PacketSessionDataV1 import PacketSessionDataV1
 
 ###################################################################
 #                                                                 #
@@ -447,7 +447,7 @@ if __name__ == "__main__":
     assert ctypes.sizeof(PacketEventDataV1) == 36
     assert ctypes.sizeof(PacketParticipantsDataV1) == 1257
     assert ctypes.sizeof(PacketCarSetupDataV1) == 1102
-    assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347  # TODO: Determine new size
+    assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1526
     assert ctypes.sizeof(PacketCarStatusDataV1) == 1058
     assert ctypes.sizeof(PacketFinalClassificationDataV1) == 839
     assert ctypes.sizeof(PacketLobbyInfoDataV1) == 1191

@@ -1,7 +1,7 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from LobbyInfoDataV1 import LobbyInfoDataV1
+from f1_telemetry_2021.lobby_info_packet.LobbyInfoDataV1 import LobbyInfoDataV1
 
 
 class PacketLobbyInfoDataV1(PackedLittleEndianStructure):

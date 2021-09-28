@@ -1,7 +1,7 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from CarMotionDataV1 import CarMotionDataV1
+from f1_telemetry_2021.motion_packet.CarMotionDataV1 import CarMotionDataV1
 
 
 class PacketMotionDataV1(PackedLittleEndianStructure):

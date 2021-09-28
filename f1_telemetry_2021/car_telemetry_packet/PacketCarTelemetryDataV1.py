@@ -1,7 +1,7 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from CarTelemetryDataV1 import CarTelemetryDataV1
+from f1_telemetry_2021.car_telemetry_packet.CarTelemetryDataV1 import CarTelemetryDataV1
 
 
 class PacketCarTelemetryDataV1(PackedLittleEndianStructure):
@@ -10,7 +10,7 @@ class PacketCarTelemetryDataV1(PackedLittleEndianStructure):
     It details various values that would be recorded on the car such as speed, throttle application, DRS etc.
 
     Frequency: Rate as specified in menus
-    Size: 1347 bytes
+    Size: 1526 bytes
     Version: 1
     """
     _fields_ = [

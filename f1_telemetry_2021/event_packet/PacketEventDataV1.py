@@ -1,7 +1,7 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from EventDataDetailsV1 import EventDataDetailsV1
+from f1_telemetry_2021.event_packet.EventDataDetailsV1 import EventDataDetailsV1
 
 
 class PacketEventDataV1(PackedLittleEndianStructure):

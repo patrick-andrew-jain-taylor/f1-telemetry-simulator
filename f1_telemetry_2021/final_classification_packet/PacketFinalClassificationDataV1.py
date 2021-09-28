@@ -1,7 +1,7 @@
 import ctypes
 
 from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
-from FinalClassificationDataV1 import FinalClassificationDataV1
+from f1_telemetry_2021.final_classification_packet.FinalClassificationDataV1 import FinalClassificationDataV1
 
 
 class PacketFinalClassificationDataV1(PackedLittleEndianStructure):
