@@ -15,7 +15,9 @@ class PacketCarTelemetryDataV1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carTelemetryData', CarTelemetryDataV1 * 20),
-        ('buttonStatus', ctypes.c_uint32)  # Bit flags specifying which buttons are being
-        # pressed currently - see appendices
+        ('carTelemetryData', CarTelemetryDataV1 * 22),
+        ('mfdPanelIndex', ctypes.c_uint8),  # Index of MFD panel open - 255 = MFD closed Single player, race – 0 =
+        # Car setup, 1 = Pits 2 = Damage, 3 =  Engine, 4 = Temperatures May vary depending on game mode
+        ('mfdPanelIndexSecondaryPlayer', ctypes.c_uint8),  # See aboveBit flags specifying which buttons are being
+        ('suggestedGear', ctypes.c_uint32)  # Suggested gear for the player (1-8) 0 if no gear suggested
     ]

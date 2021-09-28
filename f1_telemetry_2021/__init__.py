@@ -389,5 +389,5 @@ if __name__ == "__main__":
     assert ctypes.sizeof(PacketEventDataV1) == 36
     assert ctypes.sizeof(PacketParticipantsDataV1) == 1257
     assert ctypes.sizeof(PacketCarSetupDataV1) == 1102
-    assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347
+    assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347  # TODO: Determine new size
     assert ctypes.sizeof(PacketCarStatusDataV1) == 1143

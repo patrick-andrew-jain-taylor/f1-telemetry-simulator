@@ -16,6 +16,7 @@ class CarTelemetryDataV1(PackedLittleEndianStructure):
         ('engineRPM', ctypes.c_uint16),  # Engine RPM
         ('drs', ctypes.c_uint8),  # 0 = off, 1 = on
         ('revLightsPercent', ctypes.c_uint8),  # Rev lights indicator (percentage)
+        ('revLightsBitValue', ctypes.c_uint16),  # Rev lights (bit 0 = leftmost LED, bit 14 = rightmost LED)
         ('brakesTemperature', ctypes.c_uint16 * 4),  # Brakes temperature (celsius)
         ('tyresSurfaceTemperature', ctypes.c_uint16 * 4),  # Tyres surface temperature (celsius)
         ('tyresInnerTemperature', ctypes.c_uint16 * 4),  # Tyres inner temperature (celsius)
