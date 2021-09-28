@@ -17,7 +17,7 @@ class PacketMotionDataV1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carMotionData', CarMotionDataV1 * 20),  # Data for all cars on track
+        ('carMotionData', CarMotionDataV1 * 22),  # Data for all cars on track
         # Extra player car ONLY data
         ('suspensionPosition', ctypes.c_float * 4),  # Note: All wheel arrays have the following order:
         ('suspensionVelocity', ctypes.c_float * 4),  # RL, RR, FL, FR
