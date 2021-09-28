@@ -10,6 +10,7 @@ This package is based on the CodeMasters Forum post documenting the F1 2019 pack
 
 import ctypes
 import enum
+
 from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStructure
 from f1_telemetry_2019.PacketHeader import PacketHeader
 from f1_telemetry_2019.car_setups_packet.CarSetupDataV1 import CarSetupDataV1
@@ -27,7 +28,6 @@ from f1_telemetry_2019.participants_packet.PacketParticipantsDataV1 import Packe
 from f1_telemetry_2019.participants_packet.ParticipantDataV1 import ParticipantDataV1
 from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
 from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
-
 
 ###################################################################
 #                                                                 #
