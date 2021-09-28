@@ -1,6 +1,7 @@
 import ctypes
 
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, CarMotionDataV1
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from CarMotionDataV1 import CarMotionDataV1
 
 
 class PacketMotionDataV1(PackedLittleEndianStructure):
@@ -12,7 +13,7 @@ class PacketMotionDataV1(PackedLittleEndianStructure):
     used to pack the data and on the assumption that direction values are always between -1.0f and 1.0f.
 
     Frequency: Rate as specified in menus
-    Size: 1343 bytes
+    Size: 1464 bytes
     Version: 1
     """
     _fields_ = [

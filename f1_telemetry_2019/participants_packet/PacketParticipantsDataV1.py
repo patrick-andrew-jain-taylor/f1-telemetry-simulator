@@ -1,6 +1,7 @@
 import ctypes
 
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, ParticipantDataV1
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from ParticipantDataV1 import ParticipantDataV1
 
 
 class PacketParticipantsDataV1(PackedLittleEndianStructure):

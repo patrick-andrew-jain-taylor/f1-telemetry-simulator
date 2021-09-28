@@ -1,4 +1,5 @@
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, CarStatusDataV1
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from CarStatusDataV1 import CarStatusDataV1
 
 
 class PacketCarStatusDataV1(PackedLittleEndianStructure):

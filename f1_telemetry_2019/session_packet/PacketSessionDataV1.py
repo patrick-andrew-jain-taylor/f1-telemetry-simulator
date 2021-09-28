@@ -1,6 +1,7 @@
 import ctypes
 
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader, MarshalZoneV1
+from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from MarshalZoneV1 import MarshalZoneV1
 
 
 class PacketSessionDataV1(PackedLittleEndianStructure):

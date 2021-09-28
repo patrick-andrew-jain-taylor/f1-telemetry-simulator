@@ -11,23 +11,16 @@ This package is based on the CodeMasters Forum post documenting the F1 2019 pack
 import ctypes
 import enum
 
-from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStructure
-from f1_telemetry_2019.PacketHeader import PacketHeader
-from f1_telemetry_2019.car_setups_packet.CarSetupDataV1 import CarSetupDataV1
-from f1_telemetry_2019.car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
-from f1_telemetry_2019.car_status_packet.CarStatusDataV1 import CarStatusDataV1
-from f1_telemetry_2019.car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
-from f1_telemetry_2019.car_telemetry_packet.CarTelemetryDataV1 import CarTelemetryDataV1
-from f1_telemetry_2019.car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
-from f1_telemetry_2019.event_packet.PacketEventDataV1 import PacketEventDataV1
-from f1_telemetry_2019.lap_data_packet.LapDataV1 import LapDataV1
-from f1_telemetry_2019.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
-from f1_telemetry_2019.motion_packet.CarMotionDataV1 import CarMotionDataV1
-from f1_telemetry_2019.motion_packet.PacketMotionDataV1 import PacketMotionDataV1
-from f1_telemetry_2019.participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
-from f1_telemetry_2019.participants_packet.ParticipantDataV1 import ParticipantDataV1
-from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
-from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
+from PackedLittleEndianStructure import PackedLittleEndianStructure
+from PacketHeader import PacketHeader
+from car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
+from car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
+from car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
+from event_packet.PacketEventDataV1 import PacketEventDataV1
+from lap_data_packet.PacketLapDataV1 import PacketLapDataV1
+from motion_packet.PacketMotionDataV1 import PacketMotionDataV1
+from participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
+from session_packet.PacketSessionDataV1 import PacketSessionDataV1
 
 ###################################################################
 #                                                                 #
