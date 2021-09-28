@@ -8,10 +8,10 @@ class PacketCarStatusDataV1(PackedLittleEndianStructure):
     It includes values such as the damage readings on the car.
 
     Frequency: Rate as specified in menus
-    Size: 1143 bytes
+    Size: 1058 bytes
     Version: 1
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carStatusData', CarStatusDataV1 * 20)
+        ('carStatusData', CarStatusDataV1 * 22)
     ]

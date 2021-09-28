@@ -4,7 +4,7 @@ from f1_telemetry_2021 import PackedLittleEndianStructure
 
 
 class CarStatusDataV1(PackedLittleEndianStructure):
-    """This type is used for the 20-element 'carStatusData' array of the PacketCarStatusData_V1 type, defined below.
+    """This type is used for the 22-element 'carStatusData' array of the PacketCarStatusData_V1 type, defined below.
 
     There is some data in the Car Status packets that you may not want other players seeing if you are in a
     multiplayer game. This is controlled by the "Your Telemetry" setting in the Telemetry options. The options are:
@@ -36,7 +36,7 @@ class CarStatusDataV1(PackedLittleEndianStructure):
         ersHarvestedThisLapMGUH
     """
     _fields_ = [
-        ('tractionControl', ctypes.c_uint8),  # 0 (off) - 2 (high)
+        ('tractionControl', ctypes.c_uint8),  # Traction control - 0 = off, 1 = medium, 2 = full
         ('antiLockBrakes', ctypes.c_uint8),  # 0 (off) - 1 (on)
         ('fuelMix', ctypes.c_uint8),  # Fuel mix - 0 = lean, 1 = standard, 2 = rich, 3 = max
         ('frontBrakeBias', ctypes.c_uint8),  # Front brake bias (percentage)
@@ -47,29 +47,21 @@ class CarStatusDataV1(PackedLittleEndianStructure):
         ('maxRPM', ctypes.c_uint16),  # Cars max RPM, point of rev limiter
         ('idleRPM', ctypes.c_uint16),  # Cars idle RPM
         ('maxGears', ctypes.c_uint8),  # Maximum number of gears
-        ('drsAllowed', ctypes.c_uint8),  # 0 = not allowed, 1 = allowed, -1 = unknown
-        ('tyresWear', ctypes.c_uint8 * 4),  # Tyre wear percentage
-        ('actualTyreCompound', ctypes.c_uint8),  # F1 Modern - 16 = C5, 17 = C4, 18 = C3, 19 = C2, 20 = C1
-        # 7 = inter, 8 = wet
-        # F1 Classic - 9 = dry, 10 = wet
-        # F2 – 11 = super soft, 12 = soft, 13 = medium, 14 = hard
-        # 15 = wet
-        ('tyreVisualCompound', ctypes.c_uint8),  # F1 visual (can be different from actual compound)
-        # 16 = soft, 17 = medium, 18 = hard, 7 = inter, 8 = wet
-        # F1 Classic – same as above
-        # F2 – same as above
-        ('tyresDamage', ctypes.c_uint8 * 4),  # Tyre damage (percentage)
-        ('frontLeftWingDamage', ctypes.c_uint8),  # Front left wing damage (percentage)
-        ('frontRightWingDamage', ctypes.c_uint8),  # Front right wing damage (percentage)
-        ('rearWingDamage', ctypes.c_uint8),  # Rear wing damage (percentage)
-        ('engineDamage', ctypes.c_uint8),  # Engine damage (percentage)
-        ('gearBoxDamage', ctypes.c_uint8),  # Gear box damage (percentage)
-        ('vehicleFiaFlags', ctypes.c_int8),  # -1 = invalid/unknown, 0 = none, 1 = green
-        # 2 = blue, 3 = yellow, 4 = red
+        ('drsAllowed', ctypes.c_uint8),  # 0 = not allowed, 1 = allowed
+        ('drsActivationDistance', ctypes.c_uint16),  # 0 = DRS not available, non-zero - DRS will be available in [X]
+        # metres
+        ('actualTyreCompound', ctypes.c_uint8),  # F1 Modern - 16 = C5, 17 = C4, 18 = C3, 19 = C2, 20 = C1,
+        # 7 = inter, 8 = wet, F1 Classic - 9 = dry, 10 = wet, F2 – 11 = super soft, 12 = soft, 13 = medium,
+        # 14 = hard, 15 = wet
+        ('visualTyreCompound', ctypes.c_uint8),  # F1 visual (can be different from actual compound) 16 = soft,
+        # 17 = medium, 18 = hard, 7 = inter, 8 = wet F1 Classic – same as above, F2 ‘19, 15 = wet, 19 – super soft,
+        # 20 = soft, 21 = medium , 22 = hard
+        ('tyresAgeLaps', ctypes.c_uint8),  # Age in laps of the current set of tyres
+        ('vehicleFiaFlags', ctypes.c_int8),  # -1 = invalid/unknown, 0 = none, 1 = green, 2 = blue, 3 = yellow, 4 = red
         ('ersStoreEnergy', ctypes.c_float),  # ERS energy store in Joules
-        ('ersDeployMode', ctypes.c_uint8),  # ERS deployment mode, 0 = none, 1 = low, 2 = medium
-        # 3 = high, 4 = overtake, 5 = hotlap
+        ('ersDeployMode', ctypes.c_uint8),  # ERS deployment mode, 0 = none, 1 = medium, 2 = hotlap, 3 = overtake
         ('ersHarvestedThisLapMGUK', ctypes.c_float),  # ERS energy harvested this lap by MGU-K
         ('ersHarvestedThisLapMGUH', ctypes.c_float),  # ERS energy harvested this lap by MGU-H
-        ('ersDeployedThisLap', ctypes.c_float)  # ERS energy deployed this lap
+        ('ersDeployedThisLap', ctypes.c_float),  # ERS energy deployed this lap
+        ('networkPaused', ctypes.c_uint8),  # Whether the car is paused in a network game
     ]
