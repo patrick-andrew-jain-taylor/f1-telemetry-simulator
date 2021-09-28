@@ -36,5 +36,22 @@ class PacketSessionDataV1(PackedLittleEndianStructure):
         ('safetyCarStatus', ctypes.c_uint8),  # 0 = no safety car, 1 = full, 2 = virtual, 3 = formation lap
         ('networkGame', ctypes.c_uint8),  # 0 = offline, 1 = online
         ('numWeatherForecastSamples', ctypes.c_uint8),  # Number of weather samples to follow
-        ('weatherForecastSamples', WeatherForecastSampleV1 * 56),  # Number of weather samples to follow
+        ('weatherForecastSamples', WeatherForecastSampleV1 * 56),  # Array of weather forecast samples
+        ('forecastAccuracy', ctypes.c_uint8),  # 0 = Perfect, 1 = Approximate
+        ('aiDifficulty', ctypes.c_uint8),  # AI Difficulty rating – 0-110
+        ('seasonLinkIdentifier', ctypes.c_uint32),  # Identifier for season - persists across saves
+        ('weekendLinkIdentifier', ctypes.c_uint32),  # Identifier for weekend - persists across saves
+        ('sessionLinkIdentifier', ctypes.c_uint32),  # Identifier for session - persists across saves
+        ('pitStopWindowIdealLap', ctypes.c_uint8),  # Ideal lap to pit on for current strategy (player)
+        ('pitStopWindowLatestLap', ctypes.c_uint8),  # Latest lap to pit on for current strategy (player)
+        ('pitStopRejoinPosition', ctypes.c_uint8),  # Predicted position to rejoin at (player)
+        ('steeringAssist', ctypes.c_uint8),  # 0 = off, 1 = on
+        ('brakingAssist', ctypes.c_uint8),  # 0 = off, 1 = low, 2 = medium, 3 = high
+        ('gearboxAssist', ctypes.c_uint8),  # 1 = manual, 2 = manual & suggested gear, 3 = auto
+        ('pitAssist', ctypes.c_uint8),  # 0 = off, 1 = on
+        ('pitReleaseAssist', ctypes.c_uint8),  # 0 = off, 1 = on
+        ('ERSAssist', ctypes.c_uint8),  # 0 = off, 1 = on
+        ('DRSAssist', ctypes.c_uint8),  # 0 = off, 1 = on
+        ('dynamicRacingLine', ctypes.c_uint8),  # 0 = off, 1 = corners only, 2 = full
+        ('dynamicRacingLineType', ctypes.c_uint8),  # 0 = 2D, 1 = 3D
     ]
