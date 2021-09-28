@@ -88,3 +88,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/.gitignore
+/.idea/aws.xml
+/.idea/f1-telemetry-simulator.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
