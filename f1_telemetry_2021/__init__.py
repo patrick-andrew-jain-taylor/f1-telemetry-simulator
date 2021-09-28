@@ -386,7 +386,7 @@ if __name__ == "__main__":
     assert ctypes.sizeof(PacketMotionDataV1) == 1464
     assert ctypes.sizeof(PacketSessionDataV1) == 625
     assert ctypes.sizeof(PacketLapDataV1) == 970
-    assert ctypes.sizeof(PacketEventDataV1) == 32
+    assert ctypes.sizeof(PacketEventDataV1) == 36
     assert ctypes.sizeof(PacketParticipantsDataV1) == 1104
     assert ctypes.sizeof(PacketCarSetupDataV1) == 843
     assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347
