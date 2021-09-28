@@ -9,12 +9,12 @@ class PacketCarSetupDataV1(PackedLittleEndianStructure):
     setup and AI cars.
 
     Frequency: 2 per second
-    Size: 843 bytes
+    Size: 1102 bytes
     Version: 1
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carSetups', CarSetupDataV1 * 20)
+        ('carSetups', CarSetupDataV1 * 22)
     ]
 
 

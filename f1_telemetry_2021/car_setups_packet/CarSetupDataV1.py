@@ -22,8 +22,10 @@ class CarSetupDataV1(PackedLittleEndianStructure):
         ('rearSuspensionHeight', ctypes.c_uint8),  # Rear ride height
         ('brakePressure', ctypes.c_uint8),  # Brake pressure (percentage)
         ('brakeBias', ctypes.c_uint8),  # Brake bias (percentage)
-        ('frontTyrePressure', ctypes.c_float),  # Front tyre pressure (PSI)
-        ('rearTyrePressure', ctypes.c_float),  # Rear tyre pressure (PSI)
+        ('rearLeftTyrePressure', ctypes.c_float),  # Rear left tyre pressure (PSI)
+        ('rearRightTyrePressure', ctypes.c_float),  # Rear right tyre pressure (PSI)
+        ('frontLeftTyrePressure', ctypes.c_float),  # Front left tyre pressure (PSI)
+        ('frontRightTyrePressure', ctypes.c_float),  # Front right tyre pressure (PSI)
         ('ballast', ctypes.c_uint8),  # Ballast
         ('fuelLoad', ctypes.c_float)  # Fuel load
     ]
