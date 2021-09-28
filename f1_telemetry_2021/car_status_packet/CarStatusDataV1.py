@@ -63,5 +63,5 @@ class CarStatusDataV1(PackedLittleEndianStructure):
         ('ersHarvestedThisLapMGUK', ctypes.c_float),  # ERS energy harvested this lap by MGU-K
         ('ersHarvestedThisLapMGUH', ctypes.c_float),  # ERS energy harvested this lap by MGU-H
         ('ersDeployedThisLap', ctypes.c_float),  # ERS energy deployed this lap
-        ('networkPaused', ctypes.c_uint8),  # Whether the car is paused in a network game
+        ('networkPaused', ctypes.c_uint8)  # Whether the car is paused in a network game
     ]
