@@ -23,6 +23,7 @@ from lobby_info_packet.PacketLobbyInfoDataV1 import PacketLobbyInfoDataV1
 from lap_data_packet.PacketLapDataV1 import PacketLapDataV1
 from motion_packet.PacketMotionDataV1 import PacketMotionDataV1
 from participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
+from session_history_packet.PacketSessionHistoryDataV1 import PacketSessionHistoryDataV1
 from session_packet.PacketSessionDataV1 import PacketSessionDataV1
 
 ###################################################################
@@ -397,3 +398,4 @@ if __name__ == "__main__":
     assert ctypes.sizeof(PacketFinalClassificationDataV1) == 839
     assert ctypes.sizeof(PacketLobbyInfoDataV1) == 1191
     assert ctypes.sizeof(PacketCarDamageDataV1) == 882
+    assert ctypes.sizeof(PacketSessionHistoryDataV1) == 1155
