@@ -360,7 +360,12 @@ ButtonFlag.description = {
     ButtonFlag.L2: "L2 or LT",
     ButtonFlag.R2: "R2 or RT",
     ButtonFlag.LEFT_STICK_CLICK: "Left Stick Click",
-    ButtonFlag.RIGHT_STICK_CLICK: "Right Stick Click"
+    ButtonFlag.RIGHT_STICK_CLICK: "Right Stick Click",
+    ButtonFlag.RIGHT_STICK_LEFT: "Right Stick Left",
+    ButtonFlag.RIGHT_STICK_RIGHT: "Right Stick Right",
+    ButtonFlag.RIGHT_STICK_UP: "Right Stick Up",
+    ButtonFlag.RIGHT_STICK_DOWN: "Right Stick Down",
+    ButtonFlag.SPECIAL: "Special"
 }
 
 ##################################
