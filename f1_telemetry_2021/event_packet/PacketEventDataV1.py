@@ -13,7 +13,7 @@ class PacketEventDataV1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('eventStringCode', ctypes.c_char * 4),  # Event string code, see below
+        ('eventStringCode', ctypes.c_uint8 * 4),  # Event string code, see below
         # Event details - should be interpreted differently for each type
         ('eventDetails', EventDataDetailsV1)  # Event details - should be interpreted differently for each type
     ]

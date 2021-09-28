@@ -17,6 +17,8 @@ from car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
 from car_status_packet.PacketCarStatusDataV1 import PacketCarStatusDataV1
 from car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
 from event_packet.PacketEventDataV1 import PacketEventDataV1
+from final_classification_packet.PacketFinalClassificationDataV1 import PacketFinalClassificationDataV1
+from lobby_info_packet.PacketLobbyInfoDataV1 import PacketLobbyInfoDataV1
 from lap_data_packet.PacketLapDataV1 import PacketLapDataV1
 from motion_packet.PacketMotionDataV1 import PacketMotionDataV1
 from participants_packet.PacketParticipantsDataV1 import PacketParticipantsDataV1
@@ -392,3 +394,4 @@ if __name__ == "__main__":
     assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347  # TODO: Determine new size
     assert ctypes.sizeof(PacketCarStatusDataV1) == 1058
     assert ctypes.sizeof(PacketFinalClassificationDataV1) == 839
+    assert ctypes.sizeof(PacketLobbyInfoDataV1) == 1191
