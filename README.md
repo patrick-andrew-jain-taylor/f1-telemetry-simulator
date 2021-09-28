@@ -7,8 +7,8 @@ Codemasters provides 5 preset builds, as well as the option of a custom preset. 
 
 ## Relevant Links
 
-[Motorsport Giant Formula 1 using AWS - A Case Study](https://www.linkedin.com/pulse/motorsport-giant-formula-1-using-aws-case-study-archishman-ghosh) - Get telemetry data delivered to Kinesis for future processing.
-[f1-2019-telemetry package](https://f1-2019-telemetry.readthedocs.io/en/latest/) - A well documented Python implementation of 2019 telemetry written by Sidney Cadot.
+* [Motorsport Giant Formula 1 using AWS - A Case Study](https://www.linkedin.com/pulse/motorsport-giant-formula-1-using-aws-case-study-archishman-ghosh) - Get telemetry data delivered to Kinesis for future processing.
+* [f1-2019-telemetry package](https://f1-2019-telemetry.readthedocs.io/en/latest/) - A well documented Python implementation of 2019 telemetry written by Sidney Cadot.
 
 ## AWS Services to consider
 
