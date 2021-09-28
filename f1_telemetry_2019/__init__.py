@@ -4,7 +4,7 @@ F1 2021 UDP Telemetry support package
 
 This package is based on the CodeMasters Forum post documenting the F1 2019 packet format:
 
-    https://forums.codemasters.com/topic/80231-f1-2021-udp-specification/
+    https://forums.codemasters.com/topic/44592-f1-2019-udp-specification/
 
 """
 
