@@ -376,14 +376,18 @@ ButtonFlag.description = {
 
 # Map from (packetFormat, packetVersion, packetId) to a specific packet type.
 HeaderFieldsToPacketType = {
-    (2019, 1, 0): PacketMotionDataV1,
-    (2019, 1, 1): PacketSessionDataV1,
-    (2019, 1, 2): PacketLapDataV1,
-    (2019, 1, 3): PacketEventDataV1,
-    (2019, 1, 4): PacketParticipantsDataV1,
-    (2019, 1, 5): PacketCarSetupDataV1,
-    (2019, 1, 6): PacketCarTelemetryDataV1,
-    (2019, 1, 7): PacketCarStatusDataV1
+    (2021, 1, 0): PacketMotionDataV1,
+    (2021, 1, 1): PacketSessionDataV1,
+    (2021, 1, 2): PacketLapDataV1,
+    (2021, 1, 3): PacketEventDataV1,
+    (2021, 1, 4): PacketParticipantsDataV1,
+    (2021, 1, 5): PacketCarSetupDataV1,
+    (2021, 1, 6): PacketCarTelemetryDataV1,
+    (2021, 1, 7): PacketCarStatusDataV1,
+    (2021, 1, 8): PacketFinalClassificationDataV1,
+    (2021, 1, 9): PacketLobbyInfoDataV1,
+    (2021, 1, 10): PacketCarDamageDataV1,
+    (2021, 1, 11): PacketSessionHistoryDataV1
 }
 
 
