@@ -323,21 +323,26 @@ SurfaceTypes = {
 @enum.unique
 class ButtonFlag(enum.IntEnum):
     """Bit-mask values for the 'button' field in Car Telemetry Data packets."""
-    CROSS = 0x0001
-    TRIANGLE = 0x0002
-    CIRCLE = 0x0004
-    SQUARE = 0x0008
-    D_PAD_LEFT = 0x0010
-    D_PAD_RIGHT = 0x0020
-    D_PAD_UP = 0x0040
-    D_PAD_DOWN = 0x0080
-    OPTIONS = 0x0100
-    L1 = 0x0200
-    R1 = 0x0400
-    L2 = 0x0800
-    R2 = 0x1000
-    LEFT_STICK_CLICK = 0x2000
-    RIGHT_STICK_CLICK = 0x4000
+    CROSS = 0x00001
+    TRIANGLE = 0x00002
+    CIRCLE = 0x00004
+    SQUARE = 0x00008
+    D_PAD_LEFT = 0x00010
+    D_PAD_RIGHT = 0x00020
+    D_PAD_UP = 0x00040
+    D_PAD_DOWN = 0x00080
+    OPTIONS = 0x00100
+    L1 = 0x00200
+    R1 = 0x00400
+    L2 = 0x00800
+    R2 = 0x01000
+    LEFT_STICK_CLICK = 0x02000
+    RIGHT_STICK_CLICK = 0x04000
+    RIGHT_STICK_LEFT = 0x08000
+    RIGHT_STICK_RIGHT = 0x10000
+    RIGHT_STICK_UP = 0x20000
+    RIGHT_STICK_DOWN = 0x40000
+    SPECIAL = 0x80000
 
 
 ButtonFlag.description = {
