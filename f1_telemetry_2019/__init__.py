@@ -14,6 +14,8 @@ from f1_telemetry_2019.PackedLittleEndianStructure import PackedLittleEndianStru
 from f1_telemetry_2019.PacketHeader import PacketHeader
 from f1_telemetry_2019.car_setups_packet.CarSetupDataV1 import CarSetupDataV1
 from f1_telemetry_2019.car_setups_packet.PacketCarSetupDataV1 import PacketCarSetupDataV1
+from f1_telemetry_2019.car_telemetry_packet.CarTelemetryDataV1 import CarTelemetryDataV1
+from f1_telemetry_2019.car_telemetry_packet.PacketCarTelemetryDataV1 import PacketCarTelemetryDataV1
 from f1_telemetry_2019.event_packet.PacketEventDataV1 import PacketEventDataV1
 from f1_telemetry_2019.lap_data_packet.LapDataV1 import LapDataV1
 from f1_telemetry_2019.lap_data_packet.PacketLapDataV1 import PacketLapDataV1
@@ -24,29 +26,6 @@ from f1_telemetry_2019.participants_packet.ParticipantDataV1 import ParticipantD
 from f1_telemetry_2019.session_packet.MarshalZoneV1 import MarshalZoneV1
 from f1_telemetry_2019.session_packet.PacketSessionDataV1 import PacketSessionDataV1
 
-
-class PacketCarTelemetryDataV1(PackedLittleEndianStructure):
-    """This packet details telemetry for all the cars in the race.
-
-    It details various values that would be recorded on the car such as speed, throttle application, DRS etc.
-
-    Frequency: Rate as specified in menus
-    Size: 1347 bytes
-    Version: 1
-    """
-    _fields_ = [
-        ('header', PacketHeader),  # Header
-        ('carTelemetryData', CarTelemetryDataV1 * 20),
-        ('buttonStatus', ctypes.c_uint32)  # Bit flags specifying which buttons are being
-        # pressed currently - see appendices
-    ]
-
-
-#############################################################
-#                                                           #
-#  __________  Packet ID 7 : CAR STATUS PACKET  __________  #
-#                                                           #
-#############################################################
 
 class CarStatusDataV1(PackedLittleEndianStructure):
     """This type is used for the 20-element 'carStatusData' array of the PacketCarStatusData_V1 type, defined below.
