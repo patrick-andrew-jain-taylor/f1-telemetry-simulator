@@ -9,10 +9,14 @@ class PacketID(enum.IntEnum):
     SESSION = 1
     LAP_DATA = 2
     EVENT = 3
-    PARTICIPANTS = 4  # 0.2 Hz (once every five seconds)
+    PARTICIPANTS = 4
     CAR_SETUPS = 5
     CAR_TELEMETRY = 6
     CAR_STATUS = 7
+    FINAL_CLASSIFICATION = 8
+    LOBBY_INFO = 9
+    CAR_DAMAGE = 10
+    SESSION_HISTORY = 11
 
 
 PacketID.short_description = {
@@ -23,7 +27,11 @@ PacketID.short_description = {
     PacketID.PARTICIPANTS: 'Participants',
     PacketID.CAR_SETUPS: 'Car Setups',
     PacketID.CAR_TELEMETRY: 'Car Telemetry',
-    PacketID.CAR_STATUS: 'Car Status'
+    PacketID.CAR_STATUS: 'Car Status',
+    PacketID.FINAL_CLASSIFICATION: 'Final Classification',
+    PacketID.LOBBY_INFO: 'Lobby Info',
+    PacketID.CAR_DAMAGE: 'Car Damage',
+    PacketID.SESSION_HISTORY: 'Session History',
 }
 
 PacketID.long_description = {
@@ -34,5 +42,9 @@ PacketID.long_description = {
     PacketID.PARTICIPANTS: 'List of participants in the session, mostly relevant for multiplayer',
     PacketID.CAR_SETUPS: 'Packet detailing car setups for cars in the race',
     PacketID.CAR_TELEMETRY: 'Telemetry data for all cars',
-    PacketID.CAR_STATUS: 'Status data for all cars such as damage'
+    PacketID.CAR_STATUS: 'Status data for all cars',
+    PacketID.FINAL_CLASSIFICATION: 'Final classification confirmation at the end of a race',
+    PacketID.LOBBY_INFO: 'Information about players in a multiplayer lobby',
+    PacketID.CAR_DAMAGE: 'Damage status for all cars',
+    PacketID.SESSION_HISTORY: 'Lap and tyre data for session'
 }
