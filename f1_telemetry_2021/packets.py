@@ -19,7 +19,8 @@ import enum
 #########################################################
 
 class PackedLittleEndianStructure(ctypes.LittleEndianStructure):
-    """The standard ctypes LittleEndianStructure, but tightly packed (no field padding), and with a proper repr() function.
+    """The standard ctypes LittleEndianStructure, but tightly packed (no field padding), and with a proper repr()
+    function.
 
     This is the base type for all structures in the telemetry data.
     """
@@ -104,7 +105,7 @@ PacketID.long_description = {
 #                                                       #
 #########################################################
 
-class CarMotionData_V1(PackedLittleEndianStructure):
+class CarMotionDataV1(PackedLittleEndianStructure):
     """This type is used for the 20-element 'carMotionData' array of the PacketMotionData_V1 type, defined below."""
     _fields_ = [
         ('worldPositionX', ctypes.c_float),  # World space X position
@@ -128,7 +129,7 @@ class CarMotionData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketMotionData_V1(PackedLittleEndianStructure):
+class PacketMotionDataV1(PackedLittleEndianStructure):
     """The motion packet gives physics data for all the cars being driven.
 
     There is additional data for the car being driven with the goal of being able to drive a motion platform setup.
@@ -142,7 +143,7 @@ class PacketMotionData_V1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carMotionData', CarMotionData_V1 * 20),  # Data for all cars on track
+        ('carMotionData', CarMotionDataV1 * 20),  # Data for all cars on track
         # Extra player car ONLY data
         ('suspensionPosition', ctypes.c_float * 4),  # Note: All wheel arrays have the following order:
         ('suspensionVelocity', ctypes.c_float * 4),  # RL, RR, FL, FR
@@ -168,7 +169,7 @@ class PacketMotionData_V1(PackedLittleEndianStructure):
 #                                                        #
 ##########################################################
 
-class MarshalZone_V1(PackedLittleEndianStructure):
+class MarshalZoneV1(PackedLittleEndianStructure):
     """This type is used for the 21-element 'marshalZones' array of the PacketSessionData_V1 type, defined below."""
     _fields_ = [
         ('zoneStart', ctypes.c_float),  # Fraction (0..1) of way through the lap the marshal zone starts
@@ -176,7 +177,7 @@ class MarshalZone_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketSessionData_V1(PackedLittleEndianStructure):
+class PacketSessionDataV1(PackedLittleEndianStructure):
     """The session packet includes details about the current session in progress.
 
     Frequency: 2 per second
@@ -205,7 +206,7 @@ class PacketSessionData_V1(PackedLittleEndianStructure):
         ('spectatorCarIndex', ctypes.c_uint8),  # Index of the car being spectated
         ('sliProNativeSupport', ctypes.c_uint8),  # SLI Pro support, 0 = inactive, 1 = active
         ('numMarshalZones', ctypes.c_uint8),  # Number of marshal zones to follow
-        ('marshalZones', MarshalZone_V1 * 21),  # List of marshal zones – max 21
+        ('marshalZones', MarshalZoneV1 * 21),  # List of marshal zones – max 21
         ('safetyCarStatus', ctypes.c_uint8),  # 0 = no safety car, 1 = full safety car
         # 2 = virtual safety car
         ('networkGame', ctypes.c_uint8)  # 0 = offline, 1 = online
@@ -218,7 +219,7 @@ class PacketSessionData_V1(PackedLittleEndianStructure):
 #                                                         #
 ###########################################################
 
-class LapData_V1(PackedLittleEndianStructure):
+class LapDataV1(PackedLittleEndianStructure):
     """This type is used for the 20-element 'lapData' array of the PacketLapData_V1 type, defined below."""
     _fields_ = [
 
@@ -247,7 +248,7 @@ class LapData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketLapData_V1(PackedLittleEndianStructure):
+class PacketLapDataV1(PackedLittleEndianStructure):
     """The lap data packet gives details of all the cars in the session.
 
     Frequency: Rate as specified in menus
@@ -256,7 +257,7 @@ class PacketLapData_V1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('lapData', LapData_V1 * 20)  # Lap data for all cars on track
+        ('lapData', LapDataV1 * 20)  # Lap data for all cars on track
     ]
 
 
@@ -266,7 +267,7 @@ class PacketLapData_V1(PackedLittleEndianStructure):
 #                                                      #
 ########################################################
 
-class PacketEventData_V1(PackedLittleEndianStructure):
+class PacketEventDataV1(PackedLittleEndianStructure):
     """This packet gives details of events that happen during the course of a session.
 
     Frequency: When the event occurs
@@ -327,8 +328,9 @@ EventStringCode.long_description = {
 #                                                             #
 ###############################################################
 
-class ParticipantData_V1(PackedLittleEndianStructure):
-    """This type is used for the 20-element 'participants' array of the PacketParticipantsData_V1 type, defined below."""
+class ParticipantDataV1(PackedLittleEndianStructure):
+    """This type is used for the 20-element 'participants' array of the PacketParticipantsData_V1 type,
+    defined below. """
     _fields_ = [
         ('aiControlled', ctypes.c_uint8),  # Whether the vehicle is AI (1) or Human (0) controlled
         ('driverId', ctypes.c_uint8),  # Driver id - see appendix
@@ -341,7 +343,7 @@ class ParticipantData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketParticipantsData_V1(PackedLittleEndianStructure):
+class PacketParticipantsDataV1(PackedLittleEndianStructure):
     """This is a list of participants in the race.
 
     If the vehicle is controlled by AI, then the name will be the driver name.
@@ -357,7 +359,7 @@ class PacketParticipantsData_V1(PackedLittleEndianStructure):
         ('header', PacketHeader),  # Header
         ('numActiveCars', ctypes.c_uint8),  # Number of active cars in the data – should match number of
         # cars on HUD
-        ('participants', ParticipantData_V1 * 20)
+        ('participants', ParticipantDataV1 * 20)
     ]
 
 
@@ -367,7 +369,7 @@ class PacketParticipantsData_V1(PackedLittleEndianStructure):
 #                                                           #
 #############################################################
 
-class CarSetupData_V1(PackedLittleEndianStructure):
+class CarSetupDataV1(PackedLittleEndianStructure):
     """This type is used for the 20-element 'carSetups' array of the PacketCarSetupData_V1 type, defined below."""
     _fields_ = [
         ('frontWing', ctypes.c_uint8),  # Front wing aero
@@ -393,10 +395,11 @@ class CarSetupData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketCarSetupData_V1(PackedLittleEndianStructure):
+class PacketCarSetupDataV1(PackedLittleEndianStructure):
     """This packet details the car setups for each vehicle in the session.
 
-    Note that in multiplayer games, other player cars will appear as blank, you will only be able to see your car setup and AI cars.
+    Note that in multiplayer games, other player cars will appear as blank, you will only be able to see your car
+    setup and AI cars.
 
     Frequency: 2 per second
     Size: 843 bytes
@@ -404,7 +407,7 @@ class PacketCarSetupData_V1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carSetups', CarSetupData_V1 * 20)
+        ('carSetups', CarSetupDataV1 * 20)
     ]
 
 
@@ -414,8 +417,9 @@ class PacketCarSetupData_V1(PackedLittleEndianStructure):
 #                                                              #
 ################################################################
 
-class CarTelemetryData_V1(PackedLittleEndianStructure):
-    """This type is used for the 20-element 'carTelemetryData' array of the PacketCarTelemetryData_V1 type, defined below."""
+class CarTelemetryDataV1(PackedLittleEndianStructure):
+    """This type is used for the 20-element 'carTelemetryData' array of the PacketCarTelemetryData_V1 type,
+    defined below. """
     _fields_ = [
         ('speed', ctypes.c_uint16),  # Speed of car in kilometres per hour
         ('throttle', ctypes.c_float),  # Amount of throttle applied (0.0 to 1.0)
@@ -435,7 +439,7 @@ class CarTelemetryData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketCarTelemetryData_V1(PackedLittleEndianStructure):
+class PacketCarTelemetryDataV1(PackedLittleEndianStructure):
     """This packet details telemetry for all the cars in the race.
 
     It details various values that would be recorded on the car such as speed, throttle application, DRS etc.
@@ -446,7 +450,7 @@ class PacketCarTelemetryData_V1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carTelemetryData', CarTelemetryData_V1 * 20),
+        ('carTelemetryData', CarTelemetryDataV1 * 20),
         ('buttonStatus', ctypes.c_uint32)  # Bit flags specifying which buttons are being
         # pressed currently - see appendices
     ]
@@ -458,18 +462,19 @@ class PacketCarTelemetryData_V1(PackedLittleEndianStructure):
 #                                                           #
 #############################################################
 
-class CarStatusData_V1(PackedLittleEndianStructure):
+class CarStatusDataV1(PackedLittleEndianStructure):
     """This type is used for the 20-element 'carStatusData' array of the PacketCarStatusData_V1 type, defined below.
 
-    There is some data in the Car Status packets that you may not want other players seeing if you are in a multiplayer game.
-    This is controlled by the "Your Telemetry" setting in the Telemetry options. The options are:
+    There is some data in the Car Status packets that you may not want other players seeing if you are in a
+    multiplayer game. This is controlled by the "Your Telemetry" setting in the Telemetry options. The options are:
 
         Restricted (Default) – other players viewing the UDP data will not see values for your car;
         Public – all other players can see all the data for your car.
 
     Note: You can always see the data for the car you are driving regardless of the setting.
 
-    The following data items are set to zero if the player driving the car in question has their "Your Telemetry" set to "Restricted":
+    The following data items are set to zero if the player driving the car in question has their "Your Telemetry" set
+    to "Restricted":
 
         fuelInTank
         fuelCapacity
@@ -529,7 +534,7 @@ class CarStatusData_V1(PackedLittleEndianStructure):
     ]
 
 
-class PacketCarStatusData_V1(PackedLittleEndianStructure):
+class PacketCarStatusDataV1(PackedLittleEndianStructure):
     """This packet details car statuses for all the cars in the race.
 
     It includes values such as the damage readings on the car.
@@ -540,7 +545,7 @@ class PacketCarStatusData_V1(PackedLittleEndianStructure):
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('carStatusData', CarStatusData_V1 * 20)
+        ('carStatusData', CarStatusDataV1 * 20)
     ]
 
 
@@ -844,14 +849,14 @@ ButtonFlag.description = {
 
 # Map from (packetFormat, packetVersion, packetId) to a specific packet type.
 HeaderFieldsToPacketType = {
-    (2019, 1, 0): PacketMotionData_V1,
-    (2019, 1, 1): PacketSessionData_V1,
-    (2019, 1, 2): PacketLapData_V1,
-    (2019, 1, 3): PacketEventData_V1,
-    (2019, 1, 4): PacketParticipantsData_V1,
-    (2019, 1, 5): PacketCarSetupData_V1,
-    (2019, 1, 6): PacketCarTelemetryData_V1,
-    (2019, 1, 7): PacketCarStatusData_V1
+    (2019, 1, 0): PacketMotionDataV1,
+    (2019, 1, 1): PacketSessionDataV1,
+    (2019, 1, 2): PacketLapDataV1,
+    (2019, 1, 3): PacketEventDataV1,
+    (2019, 1, 4): PacketParticipantsDataV1,
+    (2019, 1, 5): PacketCarSetupDataV1,
+    (2019, 1, 6): PacketCarTelemetryDataV1,
+    (2019, 1, 7): PacketCarStatusDataV1
 }
 
 
@@ -905,11 +910,11 @@ def unpack_udp_packet(packet: bytes) -> PackedLittleEndianStructure:
 if __name__ == "__main__":
     # Check all the packet sizes.
 
-    assert ctypes.sizeof(PacketMotionData_V1) == 1343
-    assert ctypes.sizeof(PacketSessionData_V1) == 149
-    assert ctypes.sizeof(PacketLapData_V1) == 843
-    assert ctypes.sizeof(PacketEventData_V1) == 32
-    assert ctypes.sizeof(PacketParticipantsData_V1) == 1104
-    assert ctypes.sizeof(PacketCarSetupData_V1) == 843
-    assert ctypes.sizeof(PacketCarTelemetryData_V1) == 1347
-    assert ctypes.sizeof(PacketCarStatusData_V1) == 1143
+    assert ctypes.sizeof(PacketMotionDataV1) == 1343
+    assert ctypes.sizeof(PacketSessionDataV1) == 149
+    assert ctypes.sizeof(PacketLapDataV1) == 843
+    assert ctypes.sizeof(PacketEventDataV1) == 32
+    assert ctypes.sizeof(PacketParticipantsDataV1) == 1104
+    assert ctypes.sizeof(PacketCarSetupDataV1) == 843
+    assert ctypes.sizeof(PacketCarTelemetryDataV1) == 1347
+    assert ctypes.sizeof(PacketCarStatusDataV1) == 1143
