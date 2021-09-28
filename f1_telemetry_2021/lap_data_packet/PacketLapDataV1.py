@@ -6,10 +6,10 @@ class PacketLapDataV1(PackedLittleEndianStructure):
     """The lap data packet gives details of all the cars in the session.
 
     Frequency: Rate as specified in menus
-    Size: 843 bytes
+    Size: 970 bytes
     Version: 1
     """
     _fields_ = [
         ('header', PacketHeader),  # Header
-        ('lapData', LapDataV1 * 20)  # Lap data for all cars on track
+        ('lapData', LapDataV1 * 22)  # Lap data for all cars on track
     ]

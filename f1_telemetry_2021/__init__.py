@@ -383,9 +383,9 @@ def unpack_udp_packet(packet: bytes) -> PackedLittleEndianStructure:
 if __name__ == "__main__":
     # Check all the packet sizes.
 
-    assert ctypes.sizeof(PacketMotionDataV1) == 1343
-    assert ctypes.sizeof(PacketSessionDataV1) == 149
-    assert ctypes.sizeof(PacketLapDataV1) == 843
+    assert ctypes.sizeof(PacketMotionDataV1) == 1464
+    assert ctypes.sizeof(PacketSessionDataV1) == 625
+    assert ctypes.sizeof(PacketLapDataV1) == 970
     assert ctypes.sizeof(PacketEventDataV1) == 32
     assert ctypes.sizeof(PacketParticipantsDataV1) == 1104
     assert ctypes.sizeof(PacketCarSetupDataV1) == 843
