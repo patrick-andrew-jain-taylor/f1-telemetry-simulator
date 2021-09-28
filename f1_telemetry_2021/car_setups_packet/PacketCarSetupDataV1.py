@@ -1,4 +1,4 @@
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
 from CarSetupDataV1 import CarSetupDataV1
 
 

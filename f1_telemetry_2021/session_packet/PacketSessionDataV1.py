@@ -1,6 +1,6 @@
 import ctypes
 
-from f1_telemetry_2019 import PackedLittleEndianStructure, PacketHeader
+from f1_telemetry_2021 import PackedLittleEndianStructure, PacketHeader
 from MarshalZoneV1 import MarshalZoneV1
 from WeatherForecastSampleV1 import WeatherForecastSampleV1
 

@@ -1,6 +1,6 @@
 import ctypes
 
-from f1_telemetry_2019 import PackedLittleEndianStructure
+from f1_telemetry_2021 import PackedLittleEndianStructure
 
 
 class CarStatusDataV1(PackedLittleEndianStructure):
